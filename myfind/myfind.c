@@ -39,7 +39,6 @@ int is_dir(char* file){
 void find(char* directory, int maxdepth, char* type){
     
     if (maxdepth != -1 && maxdepth == 0) {
-        printf("%s\n", directory);
         return;
     }
     
