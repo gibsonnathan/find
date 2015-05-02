@@ -115,8 +115,7 @@ int main(int argc, char *argv[]){
     }else{
         fprintf(stderr, "No directory supplied\n");
     }
-    int i;
-    for (i = 2; i < argc; i++) {
+    for (int i = 2; i < argc; i++) {
         if (strcmp("-type", argv[i]) == 0) {
             type = argv[i+1];
         }else if (strcmp("-maxdepth", argv[i]) == 0){
