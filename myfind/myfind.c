@@ -67,10 +67,15 @@ void find(char* directory, int maxdepth, char* type){
         strcat(path, de -> d_name);
         
         if (is_file(path)) {
-            printf("%s\n", path);
+            if (strcmp(type, "f") == 0 || strcmp(type, "b") == 0) {
+                printf("%s\n", path);
+            }
+            
         }
         if(is_dir(path)){
-            printf("%s\n", path);
+            if (strcmp(type, "d") == 0 || strcmp(type, "b") == 0) {
+                printf("%s\n", path);
+            }
             find(path, maxdepth == -1 ? -1 : maxdepth -1, type);
         }
         
@@ -82,7 +87,7 @@ int main(int argc, char *argv[]){
     
     char* directory;
     int maxdepth = -1;
-    char* type;
+    char* type = "b";
     
     if (argc > 1) {
         directory = argv[1];
